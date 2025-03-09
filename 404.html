@@ -3,36 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <title>404 - Lost in Shadows | pkltheshaboy</title>
     <link rel="stylesheet" href="styles/style.css">
     <style>
         .error-container {
             text-align: center;
             padding: 2rem;
-            border: 2px solid #00ff00;
-            box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+            border: 2px solid #888;
+            box-shadow: 0 0 30px rgba(136, 136, 136, 0.2);
             background: rgba(0, 0, 0, 0.9);
             max-width: 600px;
             margin: 2rem auto;
         }
         
         .error-message {
-            color: #00ff00;
-            text-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            color: #888;
+            text-shadow: 0 0 15px rgba(136, 136, 136, 0.5);
             margin: 2rem 0;
-        }
-        
-        .shadow-veil {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, transparent 20%, #000 70%);
-            z-index: -1;
         }
     </style>
 </head>
@@ -42,23 +29,15 @@
             <img src="assets/images/logo.png" alt="Logo" class="logo">
         </header>
 
-        <div class="shadow-veil"></div>
-        
         <div class="error-container">
             <h1 class="error-message">404 - Chapter Lost in Shadows</h1>
-            <p style="color: #888; margin-bottom: 2rem;">
+            <p style="color: #666; margin-bottom: 2rem;">
                 The path you seek is shrouded in darkness...
             </p>
-            <button 
-                class="response-btn" 
-                onclick="window.location.href='/'"
-                style="margin-top: 1rem;"
-            >
+            <a href="/pkltheshaboy.github.io/" class="response-btn">
                 Return to the Light
-            </button>
+            </a>
         </div>
     </div>
-
-    <script src="scripts/script.js"></script>
 </body>
 </html>
