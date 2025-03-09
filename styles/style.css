@@ -171,3 +171,10 @@
     text-shadow: 0 0 10px rgba(136, 136, 136, 0.3);
     font-style: normal;
 }
+/* Add this to ensure button styling works for anchor tags */
+.response-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 30px;
+    margin-top: 2rem;
+}
