@@ -1,59 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Same head as index.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chapter 1 | pkltheshaboy</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <style>
+        .chapter-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .manga-viewer img {
+            width: 100%;
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 50px rgba(0, 255, 0, 0.3);
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
+    <!-- Add dark veil overlay -->
+    <div class="dark-veil"></div>
+    
     <header>
-        <!-- Same logo -->
+        <img src="../assets/images/logo.png" alt="logo" class="logo">
     </header>
-<style>
-    :root {
-        text-transform: lowercase;
-    }
-    h1, h2, h3 {
-        text-transform: lowercase !important;
-    }
-</style>
+
     <main class="chapter-container">
-        <div class="manga-viewer">
-            <!-- Add manga pages here -->
-            <img src="page1.jpg" alt="Chapter 1 Page 1">
+        <div class="cover-container">
+            <img src="../assets/covers/chapter1-cover.jpg" 
+                 alt="Chapter 1 Cover" 
+                 class="cover-image">
         </div>
 
-        <div class="music-player">
-            <iframe src="https://open.spotify.com/embed/track/TRACK_ID" 
-                    width="300" 
-                    height="380" 
-                    frameborder="0" 
-                    allowtransparency="true" 
-                    allow="encrypted-media">
-            </iframe>
+        <div class="chapter-content">
+            <div class="manga-viewer">
+                <!-- Add manga pages -->
+                <img src="../assets/manga/chapter1/page1.jpg" alt="Page 1">
+                <img src="../assets/manga/chapter1/page2.jpg" alt="Page 2">
+            </div>
+
+            <div class="music-player">
+                <iframe src="https://open.spotify.com/embed/track/TRACK_ID" 
+                        width="100%" 
+                        height="380" 
+                        style="background: #000;"
+                        frameborder="0" 
+                        allowtransparency="true" 
+                        allow="encrypted-media">
+                </iframe>
+            </div>
         </div>
 
-        <div class="quote">
+        <div class="quote-box">
             <em>"how he have a vision if he blind to himself?"</em>
         </div>
 
-        <button onclick="playBooLaugh(); window.location.href='chapter2.html'">
-            Next Chapter
+        <button class="shadow-button" onclick="nextChapter()">
+            next chapter
         </button>
     </main>
 
-    <!-- Include same scripts -->
+    <script src="../scripts/script.js"></script>
+    <script>
+        // Chapter-specific script
+        let chapterNumber = 1;
+    </script>
 </body>
-</html><script>
-    // Automatically handle next chapter navigation
-    let chapterNumber = 1; // Update this for each chapter
-    
-    function nextChapter() {
-        playBooLaugh();
-        if(chapterNumber < 100) {
-            window.location.href = `chapter${chapterNumber + 1}.html`;
-        } else {
-            window.location.href = '/'; // Return to home after last chapter
-        }
-    }
-</script>
-
-<button onclick="nextChapter()">next chapter</button>
+</html>
