@@ -1,17 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>404 - Lost in Shadows</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>404 - Lost in Shadows | pkltheshaboy</title>
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .error-content {
+            text-align: center;
+            padding: 2rem;
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 30px rgba(0,255,0,0.2);
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+        
+        .error-message {
+            font-size: 2.5rem;
+            text-shadow: 0 0 15px #00ff00;
+            margin: 2rem 0;
+        }
+        
+        .error-description {
+            color: #888;
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 <body>
     <div class="main-container">
-        <div class="error-container">
-            <h1>404</h1>
-            <p>The chapter you seek is hidden in darkness...</p>
-            <a href="/pkltheshaboy.github.io/" class="response-btn">Return to Light</a>
-        </div>
+        <header>
+            <img src="assets/images/logo.png" alt="Logo" class="logo">
+        </header>
+
+        <main class="content-wrapper">
+            <div class="error-content">
+                <div class="pixel-figure">
+                    <img src="assets/images/shadow-figure.gif" 
+                         alt="Shadow Figure" 
+                         style="filter: grayscale(100%) brightness(0.8);">
+                </div>
+                
+                <h1 class="error-message">404 - Page Lost in Shadows</h1>
+                <p class="error-description">The chapter you seek has been consumed by the void...</p>
+                
+                <button class="response-btn" onclick="window.location.href='/'">
+                    Return to the Light
+                </button>
+            </div>
+
+            <div class="social-panel">
+                <a href="[YOUR_SPOTIFY]" target="_blank">
+                    <img src="assets/icons/spotify.png" alt="Spotify">
+                </a>
+                <a href="[YOUR_INSTAGRAM]" target="_blank">
+                    <img src="assets/icons/instagram.png" alt="Instagram">
+                </a>
+                <a href="[YOUR_TWITTER]" target="_blank">
+                    <img src="assets/icons/twitter.png" alt="Twitter">
+                </a>
+            </div>
+        </main>
     </div>
 </body>
 </html>
