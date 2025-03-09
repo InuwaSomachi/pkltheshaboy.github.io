@@ -1,19 +1,20 @@
-// Home Page Functionality
+// Home Page Navigation
 document.getElementById('enterBtn').addEventListener('click', () => {
-    window.location.href = 'chapters/chapter1.html';
+    window.location.href = 'chapter1.html';
 });
 
 document.getElementById('exitBtn').addEventListener('click', () => {
-    window.location.href = 'about:blank';
+    window.location.href = 'https://google.com';
 });
 
 // Chapter Navigation
 function navigateChapter(direction) {
-    const currentPath = window.location.pathname;
-    const chapterNumber = parseInt(currentPath.match(/chapter(\d+)\.html/)[1]);
-    const newChapter = chapterNumber + direction;
+    const currentChapter = parseInt(window.location.pathname.match(/chapter(\d+)\.html/)[1]);
+    const newChapter = currentChapter + direction;
     
     if(newChapter >= 1 && newChapter <= 100) {
         window.location.href = `chapter${newChapter}.html`;
+    } else {
+        window.location.href = '/pkltheshaboy.github.io/404.html';
     }
 }
