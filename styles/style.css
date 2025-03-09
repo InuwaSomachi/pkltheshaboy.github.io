@@ -122,3 +122,24 @@
 .nav-button:hover {
     background: rgba(0,255,0,0.3);
 }
+/* Quote Section */
+.quote-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-left: 3px solid #00ff00;
+    background: rgba(0, 255, 0, 0.05);
+    font-style: italic;
+}
+
+/* Music Player Styling */
+.music-player {
+    margin: 2rem 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.music-player iframe {
+    border: 1px solid #00ff00 !important;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
