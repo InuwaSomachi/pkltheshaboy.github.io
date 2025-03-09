@@ -102,3 +102,23 @@
         gap: 1.5rem;
     }
 }
+/* Chapter Navigation Buttons */
+.chapter-nav {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.nav-button {
+    background: rgba(0,255,0,0.1);
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: rgba(0,255,0,0.3);
+}
