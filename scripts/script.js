@@ -1,6 +1,6 @@
 // Home Page Navigation
 document.getElementById('enterBtn').addEventListener('click', () => {
-    window.location.href = 'chapter1.html';
+    window.location.href = 'chapters/chapter1.html';
 });
 
 document.getElementById('exitBtn').addEventListener('click', () => {
@@ -9,12 +9,15 @@ document.getElementById('exitBtn').addEventListener('click', () => {
 
 // Chapter Navigation
 function navigateChapter(direction) {
-    const path = window.location.pathname;
-    const chapterNumber = parseInt(path.split('chapter')[1].split('.')[0]);
-    const newChapter = chapterNumber + direction;
+    const currentChapter = parseInt(window.location.pathname.match(/chapter(\d+)\.html/)[1]);
+    const newChapter = currentChapter + direction;
     
     if(newChapter >= 1 && newChapter <= 100) {
-        window.location.href = `chapter${newChapter}.html`;
+        window.location.href = `chapters/chapter${newChapter}.html`;
+    } else if(newChapter < 1) {
+        window.location.href = '../index.html';
+    } else {
+        window.location.href = '../404.html';
     }
 }
 
