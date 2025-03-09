@@ -12,8 +12,7 @@ jobs:
         run: |
           mkdir -p chapters
           for i in {3..100}; do
-          cat << "EOF" > chapters/chapter$i.html
-
+            cat << "EOF" > chapters/chapter$i.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,23 +29,17 @@ jobs:
         <header>
             <img src="../assets/images/logo.png" alt="Logo" class="logo">
         </header>
-
         <div class="chapter-title">
             chapter $i
         </div>
-
         <main class="chapter-content">
             <div class="chapter-cover">
-                <img src="../assets/covers/chapter$i-cover.jpg" 
-                     alt="Chapter $i Cover"
-                     class="cover-image">
+                <img src="../assets/covers/chapter$i-cover.jpg" alt="Chapter $i Cover" class="cover-image">
             </div>
-
             <div class="manga-section">
                 <img src="../assets/manga/chapter$i/page1.jpg" alt="Page 1">
                 <img src="../assets/manga/chapter$i/page2.jpg" alt="Page 2">
             </div>
-
             <div class="music-player">
                 <iframe src="https://open.spotify.com/embed/track/TRACK_ID" 
                         width="100%" 
@@ -56,11 +49,9 @@ jobs:
                         allow="encrypted-media">
                 </iframe>
             </div>
-
             <div class="quote-section">
                 <em>"CHAPTER_QUOTE"</em>
             </div>
-
             <div class="chapter-nav">
                 <button class="nav-button" onclick="navigateChapter(-1)">previous</button>
                 <button class="nav-button" onclick="navigateChapter(1)">next</button>
