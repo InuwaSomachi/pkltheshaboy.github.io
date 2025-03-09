@@ -126,9 +126,11 @@
 .quote-section {
     margin: 2rem 0;
     padding: 1.5rem;
-    border-left: 3px solid #00ff00;
-    background: rgba(0, 255, 0, 0.05);
+    border-left: 3px solid #666;  /* Changed to gray */
+    color: #888;                  /* Light gray text */
+    background: rgba(255, 255, 255, 0.05); /* Subtle white overlay */
     font-style: italic;
+    font-size: 1.1rem;
 }
 
 /* Music Player Styling */
