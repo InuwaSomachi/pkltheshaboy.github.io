@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chapter CHAPTER_NUMBER | pkltheshaboy</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <div class="dark-veil"></div>
+    
+    <header>
+        <img src="../assets/images/logo.png" alt="logo" class="logo">
+    </header>
+
+    <main class="chapter-container">
+        <div class="cover-container">
+            <img src="../COVER_IMAGE" 
+                 alt="Chapter CHAPTER_NUMBER Cover" 
+                 class="cover-image">
+        </div>
+
+        <div class="chapter-content">
+            <div class="manga-viewer">
+                <!-- Add pages -->
+                <img src="../assets/manga/chapterCHAPTER_NUMBER/page1.jpg" alt="Page 1">
+            </div>
+
+            <div class="music-player">
+                <iframe src="https://open.spotify.com/embed/track/TRACK_ID" 
+                        width="100%" 
+                        height="380" 
+                        style="background: #000;"
+                        frameborder="0" 
+                        allowtransparency="true" 
+                        allow="encrypted-media">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <em>"chapter CHAPTER_NUMBER quote"</em>
+        </div>
+
+        <div class="chapter-nav">
+            <% if (PREV_CHAPTER) { %>
+                <button class="shadow-button" onclick="navigateChapter(PREV_CHAPTER)">
+                    previous chapter
+                </button>
+            <% } %>
+            <% if (NEXT_CHAPTER) { %>
+                <button class="shadow-button" onclick="navigateChapter(NEXT_CHAPTER)">
+                    next chapter
+                </button>
+            <% } %>
+        </div>
+    </main>
+
+    <script src="../scripts/script.js"></script>
+    <script>
+        function navigateChapter(chapter) {
+            playBooLaugh();
+            setTimeout(() => {
+                window.location.href = `chapter${chapter}.html`;
+            }, 500);
+        }
+    </script>
+</body>
+</html>
