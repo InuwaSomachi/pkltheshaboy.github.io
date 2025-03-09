@@ -6,7 +6,11 @@ document.getElementById('enterBtn').addEventListener('click', () => {
 document.getElementById('exitBtn').addEventListener('click', () => {
     window.location.href = 'https://google.com';
 });
-
+document.querySelectorAll('.home-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        window.location.href = '/pkltheshaboy.github.io/';
+    });
+});
 // Chapter Navigation Logic
 function navigateChapter(direction) {
     const pathSegments = window.location.pathname.split('/');
