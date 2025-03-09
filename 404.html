@@ -9,24 +9,30 @@
     <title>404 - Lost in Shadows | pkltheshaboy</title>
     <link rel="stylesheet" href="styles/style.css">
     <style>
-        .error-content {
+        .error-container {
             text-align: center;
             padding: 2rem;
             border: 2px solid #00ff00;
-            box-shadow: 0 0 30px rgba(0,255,0,0.2);
-            margin: 2rem auto;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+            background: rgba(0, 0, 0, 0.9);
             max-width: 600px;
+            margin: 2rem auto;
         }
         
         .error-message {
-            font-size: 2.5rem;
-            text-shadow: 0 0 15px #00ff00;
+            color: #00ff00;
+            text-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
             margin: 2rem 0;
         }
         
-        .error-description {
-            color: #888;
-            margin-bottom: 2rem;
+        .shadow-veil {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, #000 70%);
+            z-index: -1;
         }
     </style>
 </head>
@@ -36,34 +42,23 @@
             <img src="assets/images/logo.png" alt="Logo" class="logo">
         </header>
 
-        <main class="content-wrapper">
-            <div class="error-content">
-                <div class="pixel-figure">
-                    <img src="assets/images/shadow-figure.gif" 
-                         alt="Shadow Figure" 
-                         style="filter: grayscale(100%) brightness(0.8);">
-                </div>
-                
-                <h1 class="error-message">404 - Page Lost in Shadows</h1>
-                <p class="error-description">The chapter you seek has been consumed by the void...</p>
-                
-                <button class="response-btn" onclick="window.location.href='/'">
-                    Return to the Light
-                </button>
-            </div>
-
-            <div class="social-panel">
-                <a href="[YOUR_SPOTIFY]" target="_blank">
-                    <img src="assets/icons/spotify.png" alt="Spotify">
-                </a>
-                <a href="[YOUR_INSTAGRAM]" target="_blank">
-                    <img src="assets/icons/instagram.png" alt="Instagram">
-                </a>
-                <a href="[YOUR_TWITTER]" target="_blank">
-                    <img src="assets/icons/twitter.png" alt="Twitter">
-                </a>
-            </div>
-        </main>
+        <div class="shadow-veil"></div>
+        
+        <div class="error-container">
+            <h1 class="error-message">404 - Chapter Lost in Shadows</h1>
+            <p style="color: #888; margin-bottom: 2rem;">
+                The path you seek is shrouded in darkness...
+            </p>
+            <button 
+                class="response-btn" 
+                onclick="window.location.href='/'"
+                style="margin-top: 1rem;"
+            >
+                Return to the Light
+            </button>
+        </div>
     </div>
+
+    <script src="scripts/script.js"></script>
 </body>
 </html>
