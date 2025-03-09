@@ -92,5 +92,54 @@ body {
 .cover-image {
     width: 100%;
     height: auto;
-    filter: grayscale(100%) contrast(150%);
+    filter: grayscale(100%) contrast(150%);/* Add dark overlay and shadow effects */
+body {
+    background: linear-gradient(45deg, #000000, #0a0a0a);
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, 
+        rgba(10, 10, 10, 0.8) 0%, 
+        rgba(0, 0, 0, 0.9) 100%);
+    z-index: -1;
+}
+
+.chapter-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+/* Add text shadow effects */
+h1, h2, h3 {
+    text-shadow: 0 0 10px #00ff00,
+                 0 0 20px #00ff00,
+                 0 0 30px #00ff00;
+}
+
+/* Smoke animation enhancement */
+@keyframes smoke {
+    0% { 
+        filter: blur(2px) opacity(0.8);
+        transform: translateY(0);
+    }
+    50% { 
+        filter: blur(5px) opacity(0.4);
+        transform: translateY(-10px);
+    }
+    100% { 
+        filter: blur(2px) opacity(0.8);
+        transform: translateY(0);
+    }
+}
 }
