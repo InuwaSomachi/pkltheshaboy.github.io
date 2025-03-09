@@ -6,13 +6,13 @@ jobs:
   generate-chapters:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Generate Chapter Files
-        run: |
-          mkdir -p chapters
-          for i in $(seq 1 100); do
-            cat << "EOF" > chapters/chapter$i.html
+    - uses: actions/checkout@v4
+
+    - name: Generate Chapter Files
+      run: |
+        mkdir -p chapters
+        for i in {1..100}; do
+        cat << "EOF" > chapters/chapter$i.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,8 +29,7 @@ jobs:
 
         <main class="chapter-content">
             <div class="chapter-cover">
-                <img src="../assets/covers/chapter$i-cover.jpg" 
-                     alt="Chapter $i Cover">
+                <img src="../assets/covers/chapter$i-cover.jpg" alt="Chapter $i Cover">
             </div>
 
             <div class="music-player">
@@ -57,12 +56,12 @@ jobs:
 </body>
 </html>
 EOF
-          done
+        done
 
-      - name: Commit Changes
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add chapters/
-          git diff-index --quiet HEAD || git commit -m "Auto-generated chapter templates"
-          git push
+    - name: Commit Changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add chapters/
+        git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated 100 chapters"
+        git push
