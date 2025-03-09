@@ -1,36 +1,33 @@
-function enterSite() {
-    window.location.href = "chapters/chapter1.html";
-}
-
-// Sound effect function
-function playBooLaugh() {
-    const audio = new Audio('assets/audio/boo-laugh.mp3');
-    audio.play();
-}
-function handleChoice(choice) {
-    // Play sound effect
-    playBooLaugh();
-    
-    // Add fade-out animation to buttons
-    const buttons = document.querySelectorAll('.choice-button');
-    buttons.forEach(button => button.classList.add('fade-out'));
-    
-    // Redirect after animation completes
-    setTimeout(() => {
-        if(choice) {
-            window.location.href = "chapters/chapter1.html";
-        } else {
-            window.location.href = "https://www.google.com"; // or any exit URL
-        }
-    }, 500);
-}
-
-// Updated sound effect function with error handling
+// Global audio control
 function playBooLaugh() {
     try {
-        const audio = new Audio('assets/audio/boo-laugh.mp3');
-        audio.play().catch(error => console.log('Audio play failed:', error));
+        const audio = new Audio('../assets/sounds/boo-laugh.mp3');
+        audio.play().catch(error => console.log('Audio play prevented:', error));
     } catch (e) {
         console.log('Audio error:', e);
     }
 }
+
+// Page transition effect
+function fadeOutPage() {
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+}
+
+// Chapter navigation handler
+function navigateChapter(chapterNumber) {
+    fadeOutPage();
+    playBooLaugh();
+    setTimeout(() => {
+        window.location.href = `chapter${chapterNumber}.html`;
+    }, 500);
+}
+
+// Initialize page fade-in
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+        document.body.style.transition = 'opacity 1s ease';
+    }, 100);
+});
