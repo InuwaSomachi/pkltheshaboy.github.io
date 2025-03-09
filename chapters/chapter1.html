@@ -64,3 +64,12 @@
     <script src="../scripts/script.js"></script>
 </body>
 </html>
+<button onclick="playBooLaugh(); setTimeout(() => { window.location.href='chapter2.html' }, 500)">
+    Next Chapter
+</button>
+
+<script>
+    function playBooLaugh() {
+        new Audio('../assets/sounds/boo-laugh.mp3').play();
+    }
+</script>
