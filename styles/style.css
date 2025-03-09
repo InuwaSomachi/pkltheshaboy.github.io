@@ -99,3 +99,37 @@
     padding: 10px 25px;
     cursor: pointer;
 }
+/* Add to bottom of file */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 15px;
+    }
+    
+    .logo {
+        width: 80px;
+    }
+    
+    .prompt-text {
+        font-size: 1.3rem;
+        line-height: 1.4;
+        padding: 0 15px;
+    }
+    
+    .response-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+    
+    .social-panel {
+        margin-top: 30px;
+        gap: 20px;
+    }
+    
+    .social-panel img {
+        width: 35px;
+    }
+    
+    .music-player iframe {
+        height: 380px !important;
+    }
+}
