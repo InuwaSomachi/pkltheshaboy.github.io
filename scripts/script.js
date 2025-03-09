@@ -7,24 +7,18 @@ document.getElementById('exitBtn').addEventListener('click', () => {
     window.location.href = 'https://google.com';
 });
 
-// Chapter Navigation
+// Chapter Navigation Logic
 function navigateChapter(direction) {
-    const currentChapter = parseInt(window.location.pathname.match(/chapter(\d+)\.html/)[1]);
-    const newChapter = currentChapter + direction;
-    
+    const pathSegments = window.location.pathname.split('/');
+    const currentChapterFile = pathSegments[pathSegments.length - 1];
+    const chapterNumber = parseInt(currentChapterFile.match(/\d+/)[0]);
+    const newChapter = chapterNumber + direction;
+
     if(newChapter >= 1 && newChapter <= 100) {
-        window.location.href = `chapters/chapter${newChapter}.html`;
+        window.location.href = `chapter${newChapter}.html`;
     } else if(newChapter < 1) {
         window.location.href = '../index.html';
     } else {
         window.location.href = '../404.html';
     }
-}
-
-// Error handling for audio
-function playBooLaugh() {
-    try {
-        const audio = new Audio('assets/sounds/boo-laugh.mp3');
-        audio.play().catch(() => { /* Silent error handling */ });
-    } catch(e) { /* Fallback silent */ }
 }
