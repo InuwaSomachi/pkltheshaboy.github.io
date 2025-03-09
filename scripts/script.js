@@ -9,12 +9,19 @@ document.getElementById('exitBtn').addEventListener('click', () => {
 
 // Chapter Navigation
 function navigateChapter(direction) {
-    const currentChapter = parseInt(window.location.pathname.match(/chapter(\d+)\.html/)[1]);
-    const newChapter = currentChapter + direction;
+    const path = window.location.pathname;
+    const chapterNumber = parseInt(path.split('chapter')[1].split('.')[0]);
+    const newChapter = chapterNumber + direction;
     
     if(newChapter >= 1 && newChapter <= 100) {
         window.location.href = `chapter${newChapter}.html`;
-    } else {
-        window.location.href = '/pkltheshaboy.github.io/404.html';
     }
+}
+
+// Error handling for audio
+function playBooLaugh() {
+    try {
+        const audio = new Audio('assets/sounds/boo-laugh.mp3');
+        audio.play().catch(() => { /* Silent error handling */ });
+    } catch(e) { /* Fallback silent */ }
 }
