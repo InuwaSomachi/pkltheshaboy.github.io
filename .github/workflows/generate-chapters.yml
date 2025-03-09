@@ -12,7 +12,7 @@ jobs:
         run: |
           mkdir -p chapters
           for i in {3..100}; do
-          cat << "EOF" > chapters/chapter$i.html
+          cat <<EOF > chapters/chapter$i.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,5 +77,4 @@ EOF
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add chapters/
-          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-generated chapters 3-100"
-          git push
+          git diff --quiet || (git commit -m "Auto-generated chapters 3-100" && git push)
