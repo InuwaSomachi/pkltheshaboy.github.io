@@ -1,51 +1,53 @@
-/* Base Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Harting Plain', monospace;
 }
 
-/* Main Container */
 .main-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
-    padding: 20px;
+    background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+    padding: 2rem;
 }
 
-/* Logo */
 .logo {
     width: 120px;
-    margin-bottom: 40px;
-    filter: drop-shadow(0 0 15px rgba(0,255,0,0.4));
+    margin-bottom: 3rem;
+    filter: drop-shadow(0 0 15px rgba(0,255,0,0.5));
 }
 
-/* Shadow Figure */
 .pixel-shadow {
     width: 300px;
-    margin: 20px 0;
-    filter: grayscale(100%) contrast(150%);
+    margin: 2rem 0;
+    filter: grayscale(100%) contrast(120%);
+    animation: float 6s ease-in-out infinite;
 }
 
-/* Question Panel */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
 .question-panel {
     text-align: center;
-    margin: 30px 0;
+    margin: 2rem 0;
 }
 
 .prompt-text {
     font-size: 1.8rem;
-    margin-bottom: 30px;
-    text-shadow: 0 0 20px #00ff00;
+    color: #00ff00;
+    text-shadow: 0 0 25px rgba(0,255,0,0.7);
+    margin-bottom: 2rem;
 }
 
-/* Buttons */
 .choice-buttons {
     display: flex;
-    gap: 25px;
+    gap: 2rem;
     justify-content: center;
 }
 
@@ -53,83 +55,50 @@
     background: transparent;
     border: 2px solid #00ff00;
     color: #00ff00;
-    padding: 12px 35px;
+    padding: 1rem 2rem;
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-transform: lowercase;
 }
 
 .response-btn:hover {
     background: #00ff00;
     color: #000;
-    box-shadow: 0 0 30px rgba(0,255,0,0.4);
+    box-shadow: 0 0 35px rgba(0,255,0,0.5);
 }
 
-/* Social Links */
 .social-panel {
-    margin-top: 50px;
+    margin-top: 3rem;
     display: flex;
-    gap: 30px;
+    gap: 2rem;
 }
 
-.social-link img {
+.social-panel img {
     width: 40px;
-    transition: all 0.3s ease;
-    filter: invert(58%) sepia(99%) saturate(348%) hue-rotate(71deg) brightness(119%) contrast(119%);
+    transition: transform 0.3s ease;
 }
 
-.social-link:hover img {
-    transform: scale(1.2) rotate(-15deg);
-    filter: brightness(150%);
+.social-panel img:hover {
+    transform: scale(1.2);
 }
 
-/* Chapter Page Specific Styles */
-.chapter-nav {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.nav-button {
-    background: rgba(0,255,0,0.1);
-    border: 1px solid #00ff00;
-    color: #00ff00;
-    padding: 10px 25px;
-    cursor: pointer;
-}
-/* Add to bottom of file */
 @media (max-width: 768px) {
     .main-container {
-        padding: 15px;
-    }
-    
-    .logo {
-        width: 80px;
+        padding: 1rem;
     }
     
     .prompt-text {
         font-size: 1.3rem;
-        line-height: 1.4;
-        padding: 0 15px;
+        padding: 0 1rem;
     }
     
     .response-btn {
-        padding: 10px 25px;
+        padding: 0.8rem 1.5rem;
         font-size: 1rem;
     }
     
     .social-panel {
-        margin-top: 30px;
-        gap: 20px;
-    }
-    
-    .social-panel img {
-        width: 35px;
-    }
-    
-    .music-player iframe {
-        height: 380px !important;
+        margin-top: 2rem;
+        gap: 1.5rem;
     }
 }
