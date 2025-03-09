@@ -143,3 +143,59 @@ h1, h2, h3 {
     }
 }
 }
+/* Deep Shadow Modifications */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, 
+        rgba(0, 0, 0, 0.9) 0%, 
+        rgba(0, 0, 0, 1) 100%);
+    z-index: -1;
+    filter: blur(30px);
+}
+
+.chapter-container {
+    box-shadow: 0 0 50px rgba(0, 255, 0, 0.1),
+                0 0 30px rgba(0, 0, 0, 0.5) inset;
+}
+
+.manga-viewer img {
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3),
+                0 0 50px rgba(0, 0, 0, 0.7) inset;
+}
+
+.shadow-button {
+    text-shadow: 0 0 15px #00ff00;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.4),
+                0 0 10px rgba(0, 255, 0, 0.2) inset;
+}
+
+/* Animated Depth Effect */
+@keyframes depth-pulse {
+    0% { filter: drop-shadow(0 0 10px rgba(0,255,0,0.3)); }
+    50% { filter: drop-shadow(0 0 30px rgba(0,255,0,0.6)); }
+    100% { filter: drop-shadow(0 0 10px rgba(0,255,0,0.3)); }
+}
+
+.cover-image {
+    animation: depth-pulse 8s infinite;
+    filter: grayscale(100%) contrast(200%);
+}
+
+/* Layered Shadow Effect */
+.chapter-content::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    width: 80%;
+    height: 50px;
+    background: radial-gradient(ellipse at center, 
+        rgba(0,255,0,0.2) 0%, 
+        rgba(0,0,0,0) 70%);
+    transform: translateX(-50%);
+}
