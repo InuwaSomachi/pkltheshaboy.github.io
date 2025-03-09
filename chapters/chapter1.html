@@ -35,4 +35,18 @@
 
     <!-- Include same scripts -->
 </body>
-</html>
+</html><script>
+    // Automatically handle next chapter navigation
+    let chapterNumber = 1; // Update this for each chapter
+    
+    function nextChapter() {
+        playBooLaugh();
+        if(chapterNumber < 100) {
+            window.location.href = `chapter${chapterNumber + 1}.html`;
+        } else {
+            window.location.href = '/'; // Return to home after last chapter
+        }
+    }
+</script>
+
+<button onclick="nextChapter()">next chapter</button>
