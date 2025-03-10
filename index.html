@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pkltheshaboy | Shadow Convergence</title>
+    <title>pkltheshaboy | Shadow Nexus</title>
     <style>
         :root {
             --neon-green: #00ff88;
@@ -170,9 +170,27 @@
             gap: 1rem;
             margin: 3rem 0 1rem;
             padding: 1rem;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.6);
             border-radius: 4px;
-            border: 1px solid rgba(0, 255, 136, 0.2);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .social-link {
+            color: var(--neon-green) !important;
+            text-decoration: none;
+            padding: 0.8rem;
+            border: 1px solid var(--neon-green);
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.4);
+            text-shadow: 0 0 5px var(--neon-green);
+        }
+
+        .social-link:hover {
+            background: rgba(0, 255, 136, 0.2);
+            box-shadow: 0 0 20px var(--matrix-shadow);
+            transform: translateY(-2px);
         }
 
         @keyframes hologram-pulse {
@@ -222,6 +240,74 @@
         </div>
     </div>
 
-    <!-- Keep existing smoke effect script from previous version -->
+    <script>
+        // Enhanced smoke effect
+        const canvas = document.getElementById('smoke-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleCount = 200;
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.velX = (Math.random() - 0.5) * 0.6;
+                this.velY = (Math.random() - 0.5) * 0.6;
+                this.size = Math.random() * 4 + 1;
+                this.alpha = Math.random() * 0.3 + 0.05;
+                this.life = Math.random() * 300 + 100;
+            }
+
+            update() {
+                this.x += this.velX;
+                this.y += this.velY;
+                this.life--;
+                
+                if (this.life <= 0 || this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(0, 255, 136, ${this.alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 </body>
 </html>
