@@ -591,4 +591,39 @@ body::after {
         -webkit-overflow-scrolling: touch !important;
         overflow-y: auto !important;
     }
+}/* Mobile Scroll Fix */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        height: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    body::after {
+        display: none !important;
+    }
+
+    .initiation-container {
+        position: relative !important;
+        min-height: 150vh !important; /* Increased from 100vh */
+        padding-bottom: 150px !important;
+        overflow: visible !important;
+    }
+
+    .cyber-overlay {
+        pointer-events: none !important;
+    }
+
+    .chapter-nav {
+        position: fixed !important;
+        bottom: 0 !important;
+        backdrop-filter: blur(10px) !important;
+        z-index: 1000 !important;
+    }
+
+    /* Allow content to scroll under nav */
+    .manga-content {
+        margin-bottom: 100px !important;
+    }
 }
