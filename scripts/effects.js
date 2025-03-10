@@ -16,3 +16,14 @@ function enableMobileScroll() {
     }
 }
 window.addEventListener('load', enableMobileScroll);
+// Mobile scroll enforcement
+if ('ontouchstart' in window) {
+    document.body.style.touchAction = 'pan-y';
+    document.documentElement.style.overflowY = 'auto';
+    
+    // Make smoke canvas non-interactive
+    const smokeCanvas = document.getElementById('smoke-canvas');
+    if (smokeCanvas) {
+        smokeCanvas.style.pointerEvents = 'none';
+    }
+}
