@@ -478,3 +478,57 @@ body::after {
         overscroll-behavior-y: none !important;
     }
 }
+/* Mobile Scroll Fix */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        height: auto !important;
+        position: relative !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    body::after {
+        display: none !important;
+    }
+
+    .initiation-container {
+        position: relative !important;
+        transform: none !important;
+        min-height: 100vh;
+        overflow: visible !important;
+        padding-bottom: 120px !important;
+    }
+
+    .cyber-overlay,
+    #smoke-canvas {
+        display: none !important;
+    }
+
+    .chapter-nav {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+        backdrop-filter: blur(10px) !important;
+    }
+
+    .question-wrapper {
+        flex-direction: column !important;
+    }
+}
+
+/* Force touch scrolling */
+@media (hover: none) and (pointer: coarse) {
+    html {
+        touch-action: manipulation;
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        overscroll-behavior-y: none !important;
+        -webkit-user-drag: none;
+    }
+}
