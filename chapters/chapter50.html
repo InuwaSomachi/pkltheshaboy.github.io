@@ -4,75 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 50 | pkltheshaboy</title>
-    <style>
-        /* All previous CSS styles from chapter1.html */
-        :root {
-            --neon-green: #00ff88;
-            --cyber-gray: #1a1a1a;
-            --void-black: #000000;
-            --obsidian: #080808;
-            --matrix-shadow: rgba(0, 255, 136, 0.1);
-        }
-        
-        /* ... include all CSS styles from previous chapter file ... */
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <canvas id="smoke-canvas"></canvas>
-    <div class="cyber-overlay"></div>
-
-    <div class="chapter-header">
-        <h1>Chapter 50</h1>
-    </div>
-
-    <div class="content-wrapper">
-        <main class="manga-content">
-            <div class="nav-buttons">
-                <a href="chapter49.html" class="chapter-button">Previous Chapter</a>
-                <a href="chapter51.html" class="chapter-button">Next Chapter</a>
+    <div class="chapter-container">
+        <nav class="chapter-nav">
+            <a href="chapter49.html">CHAPTER 49</a>
+<a class="current-chapter" href="chapter50.html">CHAPTER 50</a>
+<a href="chapter51.html">CHAPTER 51</a>
+<a href="chapter52.html">CHAPTER 52</a>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="manga-content">
+                <h1>CHAPTER 50</h1>
+                <img src="../assets/chapters/50/page-1.jpg" class="manga-page" alt="Chapter 50 Page 1">
+<img src="../assets/chapters/50/page-2.jpg" class="manga-page" alt="Chapter 50 Page 2">
+<img src="../assets/chapters/50/page-3.jpg" class="manga-page" alt="Chapter 50 Page 3">
+<img src="../assets/chapters/50/page-4.jpg" class="manga-page" alt="Chapter 50 Page 4">
+<img src="../assets/chapters/50/page-5.jpg" class="manga-page" alt="Chapter 50 Page 5">
+<img src="../assets/chapters/50/page-6.jpg" class="manga-page" alt="Chapter 50 Page 6">
+<img src="../assets/chapters/50/page-7.jpg" class="manga-page" alt="Chapter 50 Page 7">
+<img src="../assets/chapters/50/page-8.jpg" class="manga-page" alt="Chapter 50 Page 8">
+<img src="../assets/chapters/50/page-9.jpg" class="manga-page" alt="Chapter 50 Page 9">
+<img src="../assets/chapters/50/page-10.jpg" class="manga-page" alt="Chapter 50 Page 10">
+                <div class="button-group">
+                    <a href="chapter49.html" class="cyber-button">PREV</a>
+                    <a href="chapter51.html" class="cyber-button">NEXT</a>
+                </div>
             </div>
-
-            <!-- Manga pages would be added here -->
-            <img src="../assets/images/chapter50-1.jpg" class="manga-image" alt="Chapter 50 Page 1">
-            <img src="../assets/images/chapter50-2.jpg" class="manga-image" alt="Chapter 50 Page 2">
             
-            <div class="nav-buttons">
-                <a href="chapter49.html" class="chapter-button">Previous Chapter</a>
-                <a href="chapter51.html" class="chapter-button">Next Chapter</a>
-            </div>
-        </main>
-
-        <aside class="sidebar">
-            <div class="quote-section">
-                <h3>Cryptic Quote</h3>
-                <p>"In the shadow's embrace, the circuit-born find their truth."</p>
-            </div>
-
-            <div class="music-player">
-                <h3>Chapter Soundtrack</h3>
+            <div class="sidebar">
+                <div class="quote-box">
+                    <p class="cyber-quote">"Ghosts in the machine whisper forgotten protocols"</p>
+                </div>
                 
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/..." 
-            width="100%" height="166" frameBorder="0" 
-            allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; 
-            fullscreen; picture-in-picture" loading="lazy">
-        </iframe>
+                <div class="music-container">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/..." 
+                width="100%" height="166" frameborder="0" 
+                allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; 
+                fullscreen; picture-in-picture" loading="lazy">
+            </iframe>
+                </div>
             </div>
-        </aside>
+        </div>
     </div>
-
-    <nav class="chapter-nav">
-        <a href="../index.html">Home</a>
-        <a href="chapter50.html">Chapter 50</a>
-        <a href="chapter51.html">Chapter 51</a>
-        <a href="chapter52.html">Chapter 52</a>
-    </nav>
-
-    <script>
-        // Smoke effect script from previous files
-        const canvas = document.getElementById('smoke-canvas');
-        const ctx = canvas.getContext('2d');
-        // ... full smoke effect script ...
-    </script>
+    
+    <script src="../js/effects.js"></script>
 </body>
 </html>

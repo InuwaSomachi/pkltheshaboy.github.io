@@ -4,73 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 7 | pkltheshaboy</title>
-    <style>
-        /* All previous CSS styles from chapter1.html */
-        :root {
-            --neon-green: #00ff88;
-            --cyber-gray: #1a1a1a;
-            --void-black: #000000;
-            --obsidian: #080808;
-            --matrix-shadow: rgba(0, 255, 136, 0.1);
-        }
-        
-        /* ... include all CSS styles from previous chapter file ... */
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <canvas id="smoke-canvas"></canvas>
-    <div class="cyber-overlay"></div>
-
-    <div class="chapter-header">
-        <h1>Chapter 7</h1>
-    </div>
-
-    <div class="content-wrapper">
-        <main class="manga-content">
-            <div class="nav-buttons">
-                <a href="chapter6.html" class="chapter-button">Previous Chapter</a>
-                <a href="chapter8.html" class="chapter-button">Next Chapter</a>
+    <div class="chapter-container">
+        <nav class="chapter-nav">
+            <a href="chapter6.html">CHAPTER 6</a>
+<a class="current-chapter" href="chapter7.html">CHAPTER 7</a>
+<a href="chapter8.html">CHAPTER 8</a>
+<a href="chapter9.html">CHAPTER 9</a>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="manga-content">
+                <h1>CHAPTER 7</h1>
+                <img src="../assets/chapters/7/page-1.jpg" class="manga-page" alt="Chapter 7 Page 1">
+<img src="../assets/chapters/7/page-2.jpg" class="manga-page" alt="Chapter 7 Page 2">
+<img src="../assets/chapters/7/page-3.jpg" class="manga-page" alt="Chapter 7 Page 3">
+<img src="../assets/chapters/7/page-4.jpg" class="manga-page" alt="Chapter 7 Page 4">
+<img src="../assets/chapters/7/page-5.jpg" class="manga-page" alt="Chapter 7 Page 5">
+<img src="../assets/chapters/7/page-6.jpg" class="manga-page" alt="Chapter 7 Page 6">
+<img src="../assets/chapters/7/page-7.jpg" class="manga-page" alt="Chapter 7 Page 7">
+<img src="../assets/chapters/7/page-8.jpg" class="manga-page" alt="Chapter 7 Page 8">
+<img src="../assets/chapters/7/page-9.jpg" class="manga-page" alt="Chapter 7 Page 9">
+<img src="../assets/chapters/7/page-10.jpg" class="manga-page" alt="Chapter 7 Page 10">
+                <div class="button-group">
+                    <a href="chapter6.html" class="cyber-button">PREV</a>
+                    <a href="chapter8.html" class="cyber-button">NEXT</a>
+                </div>
             </div>
-
-            <!-- Manga pages would be added here -->
-            <img src="../assets/images/chapter7-1.jpg" class="manga-image" alt="Chapter 7 Page 1">
-            <img src="../assets/images/chapter7-2.jpg" class="manga-image" alt="Chapter 7 Page 2">
             
-            <div class="nav-buttons">
-                <a href="chapter6.html" class="chapter-button">Previous Chapter</a>
-                <a href="chapter8.html" class="chapter-button">Next Chapter</a>
-            </div>
-        </main>
-
-        <aside class="sidebar">
-            <div class="quote-section">
-                <h3>Cryptic Quote</h3>
-                <p>"In the shadow's embrace, the circuit-born find their truth."</p>
-            </div>
-
-            <div class="music-player">
-                <h3>Chapter Soundtrack</h3>
+            <div class="sidebar">
+                <div class="quote-box">
+                    <p class="cyber-quote">"Neon veins pulse through the digital abyss"</p>
+                </div>
                 
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" 
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/...&color=%2300ff88">
-        </iframe>
+                <div class="music-container">
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" 
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/...&color=%2300ff88">
+            </iframe>
+                </div>
             </div>
-        </aside>
+        </div>
     </div>
-
-    <nav class="chapter-nav">
-        <a href="../index.html">Home</a>
-        <a href="chapter7.html">Chapter 7</a>
-        <a href="chapter8.html">Chapter 8</a>
-        <a href="chapter9.html">Chapter 9</a>
-    </nav>
-
-    <script>
-        // Smoke effect script from previous files
-        const canvas = document.getElementById('smoke-canvas');
-        const ctx = canvas.getContext('2d');
-        // ... full smoke effect script ...
-    </script>
+    
+    <script src="../js/effects.js"></script>
 </body>
 </html>
