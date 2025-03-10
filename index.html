@@ -3,48 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>pkltheshaboy</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" href="assets/images/logo.png">
+    <title>pkltheshaboy | Cyber Manga Experience</title>
+    <style>
+        :root {
+            --neon-green: #0f0;
+            --matrix-green: #00ff41;
+            --deep-space: #000;
+            --cyber-shadow: rgba(0, 255, 65, 0.1);
+        }
+
+        body {
+            background: linear-gradient(to bottom right, #000 0%, #001000 100%);
+            font-family: 'Courier New', monospace;
+            color: var(--matrix-green);
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .question-page {
+            position: relative;
+            padding: 40px;
+            background: rgba(0, 10, 0, 0.95);
+            border: 1px solid var(--neon-green);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 0 30px var(--cyber-shadow);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            letter-spacing: 4px;
+        }
+
+        img, .gif {
+            border: 1px solid transparent;
+            border-radius: 5px;
+            background: linear-gradient(45deg, #000, #001100);
+            padding: 3px;
+            margin: 10px 0;
+            box-shadow: 0 0 10px var(--cyber-shadow);
+            max-width: 100%;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            background: rgba(0, 20, 0, 0.8);
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: var(--matrix-green);
+            text-align: center;
+            padding: 10px;
+            border: 1px solid var(--neon-green);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--neon-green);
+            color: var(--deep-space);
+            transform: translateY(-3px);
+        }
+
+        .chapter-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(0, 20, 0, 0.9);
+            backdrop-filter: blur(5px);
+            border-radius: 30px;
+            box-shadow: 0 0 20px var(--cyber-shadow);
+            overflow-x: auto;
+            max-width: 90vw;
+            z-index: 1000;
+        }
+
+        .chapter-nav a {
+            color: var(--matrix-green);
+            padding: 10px 20px;
+            border: 1px solid var(--neon-green);
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .chapter-nav a:hover {
+            background: var(--neon-green);
+            color: var(--deep-space);
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 255, 65, 0.05) 0px,
+                rgba(0, 255, 65, 0.05) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .media-player {
+            background: rgba(0, 15, 0, 0.9);
+            border: 1px solid var(--neon-green);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: 0 0 20px var(--cyber-shadow);
+        }
+    </style>
 </head>
 <body>
-    <div class="main-container">
-        <header>
-            <img src="assets/images/logo.png" alt="Logo" class="logo">
-        </header>
+    <section class="question-page">
+        <h1>pkltheshaboy</h1>
+        
+        <!-- Social Links Section -->
+        <div class="social-links">
+            <a href="https://www.youtube.com/@pkltheshaboy" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/pkltheshaboy" target="_blank">Instagram</a>
+            <a href="https://twitter.com/pkltheshaboy" target="_blank">Twitter</a>
+            <a href="https://soundcloud.com/pkltheshaboy" target="_blank">SoundCloud</a>
+            <a href="https://open.spotify.com/artist/..." target="_blank">Spotify</a>
+        </div>
 
-        <main class="content-wrapper">
-            <div class="shadow-figure-container">
-                <img src="assets/images/shadow-figure.gif" 
-                     alt="Mysterious Figure" 
-                     class="pixel-shadow">
-            </div>
-            
-            <div class="question-panel">
-                <h2 class="prompt-text">"هل أنت مستعد لرؤية الظلال؟?"</h2>
-                <div class="choice-buttons">
-                    <button class="response-btn" id="enterBtn">yes</button>
-                    <button class="response-btn" id="exitBtn">no</button>
-                </div>
-            </div>
+        <!-- Media Players -->
+        <div class="media-player">
+            <!-- Add your Spotify embed code here -->
+        </div>
+        <div class="media-player">
+            <!-- Add your SoundCloud embed code here -->
+        </div>
 
-            <div class="social-panel">
-                <a href="https://open.spotify.com/artist/0Cvrfc8bumiMbWWDKkbU6R" target="_blank">
-                    <img src="assets/icons/spotify.png" alt="Spotify">
-                </a>
-                <a href="https://instagram.com/theshadiest" target="_blank">
-                    <img src="assets/icons/instagram.png" alt="Instagram">
-                </a>
-                <a href="https://twitter.com/pkltheshaboy" target="_blank">
-                    <img src="assets/icons/twitter.png" alt="Twitter">
-                </a>
-            </div>
-        </main>
-    </div>
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+            <a href="chapter1.html">Chapter 1: Genesis</a>
+            <a href="chapter2.html">Chapter 2: Neon Dawn</a>
+            <a href="chapter3.html">Chapter 3: Shadow Network</a>
+            <!-- Add more chapters as needed -->
+        </div>
 
- <script src="scripts/script.js"></script>
+        <!-- Existing Content -->
+        <img src="images/cover.jpg" alt="Manga Cover">
+        <img src="gifs/cyber-eye.gif" class="gif" alt="Cyber Eye Animation">
+        
+        <!-- Add your existing content here while maintaining structure -->
+
+    </section>
 </body>
 </html>
