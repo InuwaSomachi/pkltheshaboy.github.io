@@ -532,3 +532,63 @@ body::after {
         -webkit-user-drag: none;
     }
 }
+/* Add this at the VERY END of your CSS file */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        height: auto !important;
+        position: relative !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    body::after {
+        display: none !important;
+    }
+
+    .initiation-container {
+        position: relative !important;
+        transform: none !important;
+        min-height: 100vh !important;
+        overflow: visible !important;
+        padding: 20px !important;
+        margin: 0 !important;
+        height: auto !important;
+    }
+
+    .cyber-overlay {
+        display: none !important;
+    }
+
+    #smoke-canvas {
+        display: none !important;
+    }
+
+    .chapter-nav {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+        backdrop-filter: blur(10px) !important;
+        z-index: 1000 !important;
+    }
+
+    .question-wrapper {
+        display: block !important;
+    }
+
+    .protocol-question {
+        margin-bottom: 80px !important;
+    }
+
+    .logo-header {
+        margin-bottom: 30px !important;
+    }
+    
+    /* Enable touch scrolling */
+    .manga-content {
+        -webkit-overflow-scrolling: touch !important;
+        overflow-y: auto !important;
+    }
+}
