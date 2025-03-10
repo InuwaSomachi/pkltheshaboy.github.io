@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 1: P****** | pkltheshaboy</title>
+    <title>Chapter 1: Genesis | pkltheshaboy</title>
     <style>
         :root {
             --neon-green: #00ff88;
@@ -143,6 +143,34 @@
             box-shadow: 0 0 15px var(--neon-green);
         }
 
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+            gap: 1rem;
+            position: sticky;
+            top: 20px;
+            z-index: 3;
+        }
+
+        .chapter-button {
+            padding: 12px 24px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .chapter-button:hover {
+            background: var(--neon-green);
+            color: var(--void-black);
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+
         @media (max-width: 768px) {
             .content-wrapper {
                 grid-template-columns: 1fr;
@@ -155,6 +183,15 @@
             
             .manga-image {
                 max-height: 75vh;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+            }
+            
+            .chapter-button {
+                text-align: center;
+                padding: 10px;
             }
         }
     </style>
@@ -170,9 +207,18 @@
 
     <div class="content-wrapper">
         <main class="manga-content">
+            <div class="nav-buttons">
+                <a href="../index.html" class="chapter-button">Back to Home</a>
+                <a href="chapter2.html" class="chapter-button">Next Chapter</a>
+            </div>
+
             <img src="../assets/images/chapter1-1.jpg" class="manga-image" alt="Chapter 1 Page 1">
             <img src="../assets/images/chapter1-2.jpg" class="manga-image" alt="Chapter 1 Page 2">
-            <!-- Add more manga pages as needed -->
+            
+            <div class="nav-buttons">
+                <a href="../index.html" class="chapter-button">Back to Home</a>
+                <a href="chapter2.html" class="chapter-button">Next Chapter</a>
+            </div>
         </main>
 
         <aside class="sidebar">
@@ -183,15 +229,6 @@
 
             <div class="music-player">
                 <h3>Chapter Soundtrack</h3>
-                <div class="music-player">
-                <iframe src="https://open.spotify.com/embed/track/[CHAPTER1_TRACK_ID]" 
-                        width="100%" 
-                        height="380" 
-                        frameborder="0" 
-                        allowtransparency="true" 
-                        allow="encrypted-media">
-                </iframe>
-            </div>
                 <iframe width="100%" height="166" scrolling="no" frameborder="no" 
                     src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/...&color=%2300ff88">
                 </iframe>
@@ -204,11 +241,9 @@
         <a href="chapter1.html">Chapter 1</a>
         <a href="chapter2.html">Chapter 2</a>
         <a href="chapter3.html">Chapter 3</a>
-        <!-- Add all chapter links -->
     </nav>
 
     <script>
-        // Smoke effect implementation
         const canvas = document.getElementById('smoke-canvas');
         const ctx = canvas.getContext('2d');
         
