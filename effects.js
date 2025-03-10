@@ -16,3 +16,16 @@ function enableMobileScroll() {
     }
 }
 window.addEventListener('load', enableMobileScroll);
+// Mobile scroll fix
+if ('ontouchstart' in window) {
+    document.body.style.overflowY = 'auto';
+    document.documentElement.style.overflowY = 'auto';
+    document.body.style.height = 'auto';
+    document.documentElement.style.height = 'auto';
+    
+    // Remove fixed positioning from smoke canvas
+    const smokeCanvas = document.getElementById('smoke-canvas');
+    if (smokeCanvas) {
+        smokeCanvas.style.position = 'absolute';
+    }
+}
