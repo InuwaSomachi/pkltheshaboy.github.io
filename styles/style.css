@@ -118,7 +118,50 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto !important;
+        height: auto !important;
+    }
+    
+    .initiation-container {
+        position: relative !important;
+        transform: none !important;
+        margin: 20px auto !important;
+        min-height: 100vh;
+        overflow: visible !important;
+    }
+    
+    .chapter-nav {
+        position: fixed !important;
+        bottom: 10px !important;
+        backdrop-filter: none !important;
+    }
+    
+    .cyber-overlay {
+        display: none;
+    }
+    
+    .shadow-figure {
+        margin: 20px auto !important;
+    }
+    
+    .social-grid {
+        position: relative !important;
+        z-index: 1001 !important;
+    }
+}
 
+/* Add at the very bottom of style.css */
+@media (hover: none) and (pointer: coarse) {
+    html {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    body {
+        overscroll-behavior-y: contain;
+    }
+}
 .nav-button:hover {
     background: rgba(0,255,0,0.3);
 }
