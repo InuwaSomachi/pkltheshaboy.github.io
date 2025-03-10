@@ -416,3 +416,65 @@ body::after {
         scroll-behavior: smooth;
     }
 }
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        height: auto !important;
+        position: relative !important;
+    }
+    
+    .initiation-container {
+        position: relative !important;
+        transform: none !important;
+        margin: 20px auto !important;
+        min-height: 100vh;
+        overflow: visible !important;
+        padding-bottom: 100px !important;
+    }
+    
+    .cyber-overlay {
+        display: none !important;
+    }
+    
+    .chapter-nav {
+        position: fixed !important;
+        bottom: 10px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 95% !important;
+        padding: 10px !important;
+        backdrop-filter: blur(2px) !important;
+    }
+    
+    .shadow-figure {
+        margin: 20px auto !important;
+        max-width: 80% !important;
+    }
+    
+    .social-grid {
+        position: relative !important;
+        z-index: 100 !important;
+        margin-bottom: 80px !important;
+    }
+    
+    .question-wrapper {
+        flex-direction: column !important;
+    }
+    
+    #smoke-canvas {
+        display: none !important;
+    }
+}
+
+/* Add smooth mobile scrolling */
+@media (hover: none) and (pointer: coarse) {
+    html {
+        -webkit-overflow-scrolling: touch !important;
+        scroll-behavior: smooth !important;
+    }
+    
+    body {
+        overscroll-behavior-y: none !important;
+    }
+}
