@@ -308,3 +308,68 @@ body::after {
   border-radius: 8px;
   border: none;
 }
+/* Add this to your existing CSS */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .question-page {
+        padding: 20px;
+        margin: 10px;
+        min-height: auto;
+    }
+    
+    .chapter-nav {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin: 20px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: rgba(0, 20, 0, 0.95);
+    }
+    
+    .social-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cyber-overlay {
+        position: fixed;
+        pointer-events: none;
+    }
+    
+    .initiation-container {
+        margin: 10vh auto;
+        padding: 1rem;
+    }
+    
+    .shadow-figure {
+        width: 80%;
+        max-width: 250px;
+    }
+    
+    .protocol-question {
+        font-size: 1.2rem;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .cyber-button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+/* Add smooth scrolling for mobile */
+@media (hover: none) and (pointer: coarse) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
