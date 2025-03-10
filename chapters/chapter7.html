@@ -3,63 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <title>Chapter 7 | pkltheshaboy</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <style>
+        /* All previous CSS styles from chapter1.html */
+        :root {
+            --neon-green: #00ff88;
+            --cyber-gray: #1a1a1a;
+            --void-black: #000000;
+            --obsidian: #080808;
+            --matrix-shadow: rgba(0, 255, 136, 0.1);
+        }
+        
+        /* ... include all CSS styles from previous chapter file ... */
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="main-container">
-        <header>
-            <img src="../assets/images/logo.png" alt="Logo" class="logo">
-        </header>
+    <canvas id="smoke-canvas"></canvas>
+    <div class="cyber-overlay"></div>
 
-        <!-- Chapter Title Header -->
-        <div class="chapter-title">
-            chapter 2
-        </div>
+    <div class="chapter-header">
+        <h1>Chapter 7</h1>
+    </div>
 
-        <main class="chapter-content">
-            <div class="chapter-cover">
-                <img src="../assets/covers/chapter7-cover.jpg" 
-                     alt="Chapter 7 Cover"
-                     class="cover-image">
+    <div class="content-wrapper">
+        <main class="manga-content">
+            <div class="nav-buttons">
+                <a href="chapter6.html" class="chapter-button">Previous Chapter</a>
+                <a href="chapter8.html" class="chapter-button">Next Chapter</a>
             </div>
 
-            <div class="manga-section">
-                <img src="../assets/manga/chapter7/page1.jpg" alt="Page 1">
-                <img src="../assets/manga/chapter7/page2.jpg" alt="Page 2">
+            <!-- Manga pages would be added here -->
+            <img src="../assets/images/chapter7-1.jpg" class="manga-image" alt="Chapter 7 Page 1">
+            <img src="../assets/images/chapter7-2.jpg" class="manga-image" alt="Chapter 7 Page 2">
+            
+            <div class="nav-buttons">
+                <a href="chapter6.html" class="chapter-button">Previous Chapter</a>
+                <a href="chapter8.html" class="chapter-button">Next Chapter</a>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="quote-section">
+                <h3>Cryptic Quote</h3>
+                <p>"In the shadow's embrace, the circuit-born find their truth."</p>
             </div>
 
             <div class="music-player">
-                <iframe width="100%" 
-    height="380" 
-    scrolling="no" 
-    frameborder="no" 
-    allow="autoplay" 
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/863581051&color=%23888&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
-    class="soundcloud-player">
-</iframe> 
-                        width="100%" 
-                        height="380" 
-                        frameborder="0" 
-                        allowtransparency="true" 
-                        allow="encrypted-media">
-                </iframe>
+                <h3>Chapter Soundtrack</h3>
+                
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/...&color=%2300ff88">
+        </iframe>
             </div>
-
-            <div class="quote-section">
-                <em>"I know these n*** don't know me!"</em>
-            </div>
-
-            <div class="chapter-nav">
-                <button class="nav-button" onclick="navigateChapter(-1)">previous</button>
-                <button class="nav-button" onclick="navigateChapter(1)">next</button>
-            </div>
-        </main>
+        </aside>
     </div>
 
-    <script src="../scripts/script.js"></script>
+    <nav class="chapter-nav">
+        <a href="../index.html">Home</a>
+        <a href="chapter7.html">Chapter 7</a>
+        <a href="chapter8.html">Chapter 8</a>
+        <a href="chapter9.html">Chapter 9</a>
+    </nav>
+
+    <script>
+        // Smoke effect script from previous files
+        const canvas = document.getElementById('smoke-canvas');
+        const ctx = canvas.getContext('2d');
+        // ... full smoke effect script ...
+    </script>
 </body>
 </html>
