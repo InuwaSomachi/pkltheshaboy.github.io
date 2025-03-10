@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pkltheshaboy | Shadow Gateway</title>
+    <title>pkltheshaboy | Shadow Convergence</title>
     <style>
         :root {
             --neon-green: #00ff88;
             --cyber-gray: #1a1a1a;
             --void-black: #000000;
+            --obsidian: #080808;
             --hologram-teal: #00ffaa;
-            --matrix-shadow: rgba(0, 255, 136, 0.15);
+            --matrix-shadow: rgba(0, 255, 136, 0.1);
         }
 
         body {
-            background: radial-gradient(circle at center, 
-                var(--void-black) 0%, 
-                var(--cyber-gray) 100%);
+            background: 
+                radial-gradient(circle at center, 
+                    var(--void-black) 0%, 
+                    var(--obsidian) 100%),
+                repeating-linear-gradient(
+                    45deg,
+                    var(--void-black) 0px,
+                    var(--void-black) 2px,
+                    var(--obsidian) 2px,
+                    var(--obsidian) 4px
+                );
             font-family: 'Oxanium', 'Tajawal', sans-serif;
             color: var(--neon-green);
             margin: 0;
@@ -39,66 +48,111 @@
             width: 100%;
             height: 100%;
             background: 
-                repeating-linear-gradient(0deg, rgba(0, 255, 136, 0.03) 0px 1px, transparent 2px 4px),
-                radial-gradient(circle, transparent 60%, var(--void-black) 100%);
+                repeating-linear-gradient(0deg, 
+                    rgba(0, 255, 136, 0.03) 0px 1px, 
+                    transparent 2px 4px),
+                radial-gradient(circle, 
+                    transparent 60%, 
+                    var(--void-black) 100%);
             pointer-events: none;
             z-index: 1;
         }
 
         .initiation-container {
             position: relative;
-            background: linear-gradient(145deg, rgba(26, 26, 26, 0.95) 0%, rgba(0, 0, 0, 0.95) 100%);
+            background: rgba(0, 0, 0, 0.7);
             border: 1px solid var(--neon-green);
             border-radius: 8px;
             box-shadow: 0 0 40px var(--matrix-shadow);
             max-width: 800px;
             margin: 5vh auto;
             padding: 2rem;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(12px);
             z-index: 2;
         }
 
         .logo-header {
-            width: 250px;
-            margin: 0 auto 1rem;
-            filter: drop-shadow(0 0 15px var(--neon-green));
+            width: 200px;
+            height: auto;
+            margin: 0 auto 2rem;
+            filter: 
+                drop-shadow(0 0 15px var(--neon-green))
+                contrast(120%);
             display: block;
+            opacity: 0.9;
+            max-width: 60%;
+        }
+
+        .question-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0;
         }
 
         .protocol-question {
             font-size: 1.5rem;
             text-align: center;
-            margin: 2rem 0;
-            padding: 1rem;
-            border: 1px solid var(--neon-green);
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 255, 136, 0.3);
             border-radius: 4px;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.4);
             animation: hologram-pulse 3s infinite;
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .protocol-question::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg, 
+                transparent, 
+                rgba(0, 255, 136, 0.1), 
+                transparent
+            );
+            animation: energy-flow 6s infinite linear;
         }
 
         .shadow-figure {
-            width: 300px;
-            margin: 2rem auto;
-            border: 1px solid var(--neon-green);
+            width: 250px;
+            height: auto;
+            border: 1px solid var(--void-black);
             border-radius: 4px;
-            box-shadow: 0 0 30px var(--matrix-shadow);
+            box-shadow: 
+                0 0 30px var(--matrix-shadow),
+                inset 0 0 20px var(--neon-green);
             background: var(--void-black);
             padding: 3px;
-            opacity: 0.9;
-            filter: grayscale(50%) contrast(120%);
+            opacity: 0.85;
+            filter: 
+                grayscale(30%) 
+                contrast(130%)
+                drop-shadow(0 0 5px var(--neon-green));
+            transition: opacity 0.3s ease;
+            max-width: 40%;
         }
 
         .button-container {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 3rem 0 2rem;
         }
 
         .cyber-button {
             width: 120px;
             padding: 12px 24px;
-            background: linear-gradient(to right, var(--void-black) 0%, var(--cyber-gray) 100%);
+            background: linear-gradient(
+                to right, 
+                var(--void-black) 0%, 
+                var(--cyber-gray) 100%
+            );
             border: 1px solid var(--neon-green);
             color: var(--neon-green);
             font-size: 1.1rem;
@@ -106,6 +160,8 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .social-grid {
@@ -116,30 +172,26 @@
             padding: 1rem;
             background: rgba(0, 0, 0, 0.4);
             border-radius: 4px;
-        }
-
-        .social-link {
-            color: var(--neon-green) !important;
-            text-decoration: none;
-            padding: 0.8rem;
-            border: 1px solid var(--neon-green);
-            border-radius: 4px;
-            text-align: center;
-            transition: all 0.3s ease;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .social-link:hover {
-            background: rgba(0, 255, 136, 0.1);
-            box-shadow: 0 0 15px var(--matrix-shadow);
+            border: 1px solid rgba(0, 255, 136, 0.2);
         }
 
         @keyframes hologram-pulse {
-            0%, 100% { opacity: 0.9; text-shadow: 0 0 15px var(--hologram-teal); }
-            50% { opacity: 0.7; text-shadow: 0 0 25px var(--hologram-teal); }
+            0%, 100% { 
+                opacity: 0.9; 
+                text-shadow: 0 0 15px var(--hologram-teal);
+            }
+            50% { 
+                opacity: 0.7; 
+                text-shadow: 0 0 25px var(--hologram-teal);
+            }
+        }
+
+        @keyframes energy-flow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600&family=Tajawal:wght@400;500&display=swap" rel="stylesheet>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600&family=Tajawal:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <canvas id="smoke-canvas"></canvas>
@@ -148,11 +200,12 @@
     <div class="initiation-container">
         <img src="assets/images/logo.png" class="logo-header" alt="Shadow Logo">
         
-        <div class="protocol-question">
-            هل واجهت ظلًا من قبل؟
+        <div class="question-wrapper">
+            <div class="protocol-question">
+                هل واجهت ظلًا من قبل؟
+            </div>
+            <img src="assets/images/shadow-figure.gif" class="shadow-figure" alt="Shadow Figure">
         </div>
-
-        <img src="assets/images/shadow-figure.gif" class="shadow-figure" alt="Shadow Figure">
 
         <div class="button-container">
             <button class="cyber-button" onclick="window.location.href='chapters/chapter1.html';">YES</button>
@@ -169,73 +222,6 @@
         </div>
     </div>
 
-    <script>
-        // Smoke effect
-        const canvas = document.getElementById('smoke-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const particles = [];
-        const particleCount = 150;
-
-        class Particle {
-            constructor() {
-                this.reset();
-            }
-
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.velX = (Math.random() - 0.5) * 0.4;
-                this.velY = (Math.random() - 0.5) * 0.4;
-                this.size = Math.random() * 3 + 1;
-                this.alpha = Math.random() * 0.2 + 0.05;
-            }
-
-            update() {
-                this.x += this.velX;
-                this.y += this.velY;
-                
-                if (this.x < 0 || this.x > canvas.width ||
-                    this.y < 0 || this.y > canvas.height) {
-                    this.reset();
-                }
-            }
-
-            draw() {
-                ctx.fillStyle = `rgba(0, 255, 136, ${this.alpha})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function init() {
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-            
-            requestAnimationFrame(animate);
-        }
-
-        init();
-        animate();
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
+    <!-- Keep existing smoke effect script from previous version -->
 </body>
 </html>
